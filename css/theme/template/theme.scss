@@ -47,12 +47,10 @@ body {
 	letter-spacing: $headingLetterSpacing;
 
 	text-transform: $headingTextTransform;
-	text-shadow: $headingTextShadow;
-
 	word-wrap: break-word;
 }
 
-.reveal h1 {font-size: $heading1Size; }
+.reveal h1 {font-size: $heading1Size; text-shadow: $headingTextShadow;}
 .reveal h2 {font-size: $heading2Size; }
 .reveal h3 {font-size: $heading3Size; }
 .reveal h4 {font-size: $heading4Size; }

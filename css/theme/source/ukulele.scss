@@ -1,0 +1,88 @@
+/**
+ * Blood theme for reveal.js
+ * Author: Walther http://github.com/Walther
+ *
+ * Designed to be used with highlight.js theme
+ * "monokai_sublime.css" available from
+ * https://github.com/isagalaev/highlight.js/
+ *
+ * For other themes, change $codeBackground accordingly.
+ *
+ */
+
+ // Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('../../lib/font/league-spartan/leaguespartan-bold.eot');
+    src: url('../../lib/font/league-spartan/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/league-spartan/leaguespartan-bold.woff2') format('woff2'),
+         url('../../lib/font/league-spartan/leaguespartan-bold.woff') format('woff'),
+         url('../../lib/font/league-spartan/leaguespartan-bold.ttf') format('truetype'),
+         url('../../lib/font/league-spartan/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+// Colors used in the theme
+$teal-dark: #025275;
+$teal-light: #5091bb;
+$backgroundColor: #ed5f87;
+$yellow: #fff400;
+
+// Main text
+$mainFont: 'League Spartan', 'sans-serif';
+$mainFontSize: 36px;
+$mainColor: $teal-dark;
+
+// Headings
+$headingFont: 'League Spartan', 'sans-serif';
+$headingTextShadow: 2px 2px 2px $teal-light;
+$headingColor: $teal-dark;
+
+// Links
+$linkColor: $yellow;
+$linkColorHover: lighten( $linkColor, 20% );
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// some overrides after theme template import
+
+.reveal p {
+    font-weight: 300;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    font-weight: 700;
+}
+
+.reveal p code {
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.reveal small code {
+    vertical-align: baseline;
+}
+
+.reveal .progress span {
+    background-color: $yellow;
+}
+
+.reveal figcaption {
+    font-size: 20px;
+}
+

@@ -43,11 +43,11 @@ body {
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: uppercase;
-  text-shadow: 2px 2px 2px #222;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 3.77em; }
+  font-size: 3.77em;
+  text-shadow: 2px 2px 2px #222; }
 
 .reveal h2 {
   font-size: 2.11em; }
