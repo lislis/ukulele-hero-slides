@@ -78,10 +78,6 @@
 					<h2>It combines a lot of cool things</h2>
 				</section>
 				<section>
-					<h3>human machine interaction</h3>
-					<h3 class="fragment">human human machine interaction</h3>
-				</section>
-				<section>
 					<h3>audio, visual, textual information</h3>
 					<h3 class="fragment">controlled by code</h3>
 				</section>
@@ -113,11 +109,11 @@
 				</section>
 
 				<section>
-					<h2>Demo Time!</h2>
+					<h3>Disclaimer: this is a hack</h3>
 				</section>
 
 				<section>
-					<h3>Disclaimer: this is a hack</h3>
+					<h2>Demo Time!</h2>
 				</section>
 
 				<section>
@@ -146,12 +142,11 @@
 				</section>
 
 				<section>
-					<pre><code data-trim>var ctx = new OfflineAudioContext(channel, bufferLength, sampleRate);</code></pre>
+					<pre><code data-trim>var ctx = new OfflineAudioContex(1, 44100 * 60, 44100);</code></pre>
 				</section>
 
 				<section data-background="#5091bb">
 					<h3>Intermission</h3>
-					<h2 class="fragment">What are those params?</h2>
 				</section>
 
 				<section data-background="#5091bb">
@@ -172,7 +167,7 @@
 
 				<section data-background="#5091bb">
 					<h2>Frequency</h2>
-					<p class="fragment">number of times the wave pattern repeats every second, meassured in hz</p>
+					<p class="fragment">number of times the wave pattern repeats every second, meassured in Hz</p>
 					<aside class="notes">
 						Pitch is meassured in frequency (number of times the wave pattern repeats every second) in hertz
 					</aside>
@@ -188,13 +183,7 @@
 				</section>
 
 				<section data-background="#5091bb">
-					<h2>AudioBuffer, Uint8Array</h2>
-					<p class="fragment">AudioBuffer = an audio asset in memory</p>
-					<p class="fragment">Uint8Array = array like structures for binary data</p>
-				</section>
-
-				<section data-background="#5091bb">
-					<h2>(buffer) length, sampleRate</h2>
+					<h2>sample frame</h2>
 				</section>
 
 				<section data-background="#5091bb">
@@ -207,7 +196,7 @@
 				</section>
 
 				<section data-background="#5091bb">
-					<h2>(buffer) length, sampleRate</h2>
+					<h2>length, sampleRate</h2>
 					<p class="fragment">length = size in sample frames</p>
 					<p class="fragment">sampleRate = number of sample frames per second</p>
 
@@ -222,22 +211,14 @@
 
 				<section>
 					<h2>Analyser Node</h2>
-					<p class="fragment">provides real-time frequency and time-domain analysis information</p>
-				</section>
-
-				<section>
-					<pre><code data-trim>var analyser = ctx.createAnalyser();
+					<pre class="fragment"><code data-trim>var analyser = ctx.createAnalyser();
 analyser.fftSize = 4096;
 					</code></pre>
 				</section>
 
 				<section>
 					<h2>ScriptProcessor Node</h2>
-					<p class="fragment">generation, processing, or analyzing of audio</p>
-				</section>
-
-				<section>
-					<pre><code data-trim>var processor = ctx.createScriptProcessor(16384, 1, 1);
+					<pre class="fragment"><code data-trim>var processor = ctx.createScriptProcessor(16384, 1, 1);
 					</code></pre>
 				</section>
 
@@ -249,6 +230,13 @@ analyser.fftSize = 4096;
 	// save data for further use
 }
 					</code></pre>
+				</section>
+
+				<section>
+					<h3>To get to the musical note</h3>
+					<p class="fragment">determine the biggest value and its key</p>
+					<p class="fragment">calculate the the frequency from the key</p>
+					<p class="fragment">and look it up the note string</p>
 				</section>
 
 				<section data-background="#5091bb">
@@ -270,28 +258,6 @@ analyser.fftSize = 4096;
 
 				<section data-background="#5091bb">
 					<h3>/Intermission</h3>
-				</section>
-
-				<section>
-					<h3>To get to the musical note</h3>
-					<p class="fragment">determine the biggest value and its key</p>
-					<p class="fragment">calculate the the frequency from the key</p>
-					<p class="fragment">and look it up the note string</p>
-				</section>
-
-				<section data-background="#5091bb">
-					<h3>Fun facts on musical notes</h3>
-					<p class="fragment">an octave is double/ half of the wavelength of the base note</p>
-				</section>
-
-				<section data-background="#5091bb">
-					<h3>Fun facts on musical notes</h3>
-					<p class="fragment">an octave is separated into 12 semitones</p>
-				</section>
-
-				<section data-background="#5091bb">
-					<h3>Fun facts on musical notes</h3>
-					<p class="fragment">that means it's all relative</p>
 				</section>
 
 				<section>
@@ -320,11 +286,7 @@ analyser.fftSize = 4096;
 				</section>
 
 				<section>
-					<h2>aka the glue</h2>
-				</section>
-
-				<section>
-					<h2>aka much spaghetti code</h2>
+					<h2>aka spaghetti code</h2>
 				</section>
 
 				<section>
