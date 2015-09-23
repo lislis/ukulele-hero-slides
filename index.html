@@ -223,7 +223,7 @@ analyser.fftSize = 4096;
 				</section>
 
 				<section>
-					<pre><code data-trim>processor.onaudioprocess = function() {
+					<pre><code data-trim>processor.onaudioprocess = function(ev) {
 	var data =  new Uint8Array(analyser.frequencyBinCount);
 	analyser.getByteFrequencyData(data);
 
@@ -236,7 +236,7 @@ analyser.fftSize = 4096;
 					<h3>To get to the musical note</h3>
 					<p class="fragment">determine the biggest value and its key</p>
 					<p class="fragment">calculate the the frequency from the key</p>
-					<p class="fragment">and look it up the note string</p>
+					<p class="fragment">and look up the musical note</p>
 				</section>
 
 				<section data-background="#5091bb">
